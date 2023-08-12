@@ -63,7 +63,7 @@ export default async function Home() {
   const streamUrls = await fetchStreamUrls();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-around p-24">
+    <main className="flex min-h-screen flex-col items-center justify-around p-4 pt-8">
       <div className="mb-8">
         <Image
           src="/GeorgeFMLogo.svg"

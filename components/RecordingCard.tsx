@@ -41,7 +41,7 @@ export default function RecordingCard({
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-lg">{prettyName}</CardTitle>
+        <CardTitle className="text-xl text-bold">{prettyName}</CardTitle>
       </CardHeader>
       <CardContent>
         <audio controls preload="metadata" className="w-full">

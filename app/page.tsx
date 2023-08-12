@@ -64,7 +64,7 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-around p-24">
-      <div>
+      <div className="mb-8">
         <Image
           src="/GeorgeFMLogo.svg"
           alt="Radio Logo"

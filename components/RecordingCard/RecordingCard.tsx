@@ -1,11 +1,6 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { format } from "date-fns";
+import AudioPlayerComponent from "./AudioPlayer";
 
 function convertName(name: string): string {
   const removeExtension = name.replace(".mp3", "");
@@ -44,9 +39,10 @@ export default function RecordingCard({
         <CardTitle className="text-xl text-bold">{prettyName}</CardTitle>
       </CardHeader>
       <CardContent>
-        <audio controls preload="metadata" className="w-full">
+        {/* <audio controls preload="metadata" className="w-full">
           <source src={url} type="audio/mpeg" />
-        </audio>
+        </audio> */}
+        <AudioPlayerComponent url={url} />
       </CardContent>
     </Card>
   );

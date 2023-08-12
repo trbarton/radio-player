@@ -1,14 +1,7 @@
 import Image from "next/image";
 import { env } from "@/env.mjs";
-import {
-  S3Client,
-  ListBucketsCommand,
-  ListObjectsV2Command,
-  GetObjectCommand,
-  PutObjectCommand,
-} from "@aws-sdk/client-s3";
-import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
-import RecordingCard from "@/components/RecordingCard";
+import { S3Client, ListObjectsV2Command } from "@aws-sdk/client-s3";
+import RecordingCard from "@/components/RecordingCard/RecordingCard";
 
 const S3 = new S3Client({
   region: "auto",

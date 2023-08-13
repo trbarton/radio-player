@@ -46,7 +46,7 @@ async function fetchStreamUrls(): Promise<Stream[]> {
     const recordingName = object.Key ?? "Unkown Recording";
     return {
       name: recordingName,
-      url: `https://pub-6206b0765249486391360da9b258b8fd.r2.dev/${recordingName}`,
+      url: `${env.PUBLIC_BUCKET_URL}/${recordingName}`,
     };
   });
 

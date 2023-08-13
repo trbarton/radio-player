@@ -20,6 +20,7 @@ interface Stream {
 async function fetchStreamUrls(): Promise<Stream[]> {
   // List the object in recordings bucket
   const { Contents } = await S3.send(
+    // TODO - pagination
     new ListObjectsV2Command({ Bucket: env.S3_BUCKET })
   );
 

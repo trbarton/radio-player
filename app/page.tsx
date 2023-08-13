@@ -12,6 +12,9 @@ const S3 = new S3Client({
   },
 });
 
+export const dynamic = "force-dynamic";
+export const revalidate = 30;
+
 interface Stream {
   name: string;
   url: string;

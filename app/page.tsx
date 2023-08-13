@@ -12,6 +12,8 @@ const S3 = new S3Client({
   },
 });
 
+const revalidate = 30;
+
 interface Stream {
   name: string;
   url: string;

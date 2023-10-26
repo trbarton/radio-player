@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { format } from "date-fns";
 import AudioPlayerComponent from "./AudioPlayer";
+import Link from "next/link";
 
 function convertName(name: string): string {
   const removeExtension = name.replace(".mp3", "");
@@ -33,10 +34,23 @@ export default function RecordingCard({
   url: string;
 }) {
   const prettyName = convertName(name);
+
+  const encoded = btoa(
+    JSON.stringify({
+      name: name,
+      url: url,
+    })
+  );
+  const urlEncoded = encodeURIComponent(encoded);
+
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-xl text-bold">{prettyName}</CardTitle>
+        <CardTitle className="text-xl text-bold">
+          <Link href={`/recording/${urlEncoded}`} className="hover:underline">
+            {prettyName}
+          </Link>
+        </CardTitle>
       </CardHeader>
       <CardContent>
         {/* <audio controls preload="metadata" className="w-full">

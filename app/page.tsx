@@ -58,6 +58,7 @@ async function fetchStreamUrls(): Promise<Stream[]> {
 export default async function Home() {
   // Fetch list of recordings from R2
   const streamUrls = await fetchStreamUrls();
+  const limitedStreamUrls = streamUrls.slice(0, 5);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-around p-4 pt-8">
@@ -71,7 +72,7 @@ export default async function Home() {
         />
       </div>
       <div className="space-y-4 w-full max-w-3xl">
-        {streamUrls.map((stream) => (
+        {limitedStreamUrls.map((stream) => (
           <RecordingCard
             key={stream.name}
             name={stream.name}
